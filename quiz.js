@@ -1,12 +1,18 @@
 const baseId = 'appWFfuIEFdUuUnqv';
-const tableIdOrName = 'QuizSheet';
+const mainTableIdOrName = 'QuizSheet';
+const rolesTableIdOrName = 'SecondQuiz';
 const apiToken = 'patm1G0PlL8LLg0JN.017f7e25a9437e49357222b1bcfeeb80dda332cf0f639c6d06001a7c0a551d0c';
 
 let airtableData = [];
+let rolesData = [];
+
+$(document).ready(function() {
+    fetchAirtableData();
+});
 
 async function fetchAirtableData() {
     try {
-        const response = await axios.get(`https://api.airtable.com/v0/${baseId}/${tableIdOrName}`, {
+        const response = await axios.get(`https://api.airtable.com/v0/${baseId}/${mainTableIdOrName}`, {
             headers: {
                 Authorization: `Bearer ${apiToken}`
             }
@@ -14,6 +20,14 @@ async function fetchAirtableData() {
         airtableData = response.data.records;
         console.log('Airtable data fetched successfully: ', airtableData);
         loadAirtableData();
+
+        const rolesResponse = await axios.get(`https://api.airtable.com/v0/${baseId}/${rolesTableIdOrName}`, {
+            headers: {
+                Authorization: `Bearer ${apiToken}`
+            }
+        });
+        rolesData = rolesResponse.data.records;
+        console.log('Roles data fetched successfully: ', rolesData);
     } catch (error) {
         console.error('Error fetching data from Airtable: ', error);
     }
@@ -146,11 +160,10 @@ function showReport(firstName, fullName, benefits) {
     const integrationScore = Math.floor(Math.random() * 11) + 85;
 
     document.getElementById('report-header').textContent = `Thank you, ${firstName}!`;
-    document.getElementById('report-greeting').innerHTML = `
-        Dear ${firstName},<br><br>
+    document.getElementById('report-greeting').innerHTML = 
+        `Dear ${firstName},<br><br>
         Thank you for taking the time to complete our quiz. Based on your responses, we believe that your ${industry} business, specifically in the ${businessType} sector, has immense potential to address the challenge of ${readablePainPoint}.<br><br>
-        Here are the key roles you can consider outsourcing to enhance your operations:
-    `;
+        Here are the key roles you can consider outsourcing to enhance your operations:`;
 
     const rolesList = document.getElementById('report-roles');
     rolesList.innerHTML = '';
@@ -168,7 +181,7 @@ function showReport(firstName, fullName, benefits) {
     document.getElementById('report-industry-benefits').textContent = benefits.industryBenefits;
     document.getElementById('report-businessType-benefits').textContent = benefits.businessTypeBenefits;
 
-    populateSecondQuizDropdowns(roles);
+    populateSecondQuizDropdowns();
 
     // Populate hidden fields in the second form
     document.getElementById('industry-hidden').value = industry;
@@ -184,7 +197,7 @@ function showReport(firstName, fullName, benefits) {
     document.getElementById('report').classList.add('active');
 }
 
-function populateSecondQuizDropdowns(roles) {
+function populateSecondQuizDropdowns() {
     const additionalQuestion1 = document.getElementById('additionalQuestion1');
     const additionalQuestion2 = document.getElementById('additionalQuestion2');
 
@@ -197,20 +210,19 @@ function populateSecondQuizDropdowns(roles) {
     }
 
     additionalQuestion2.innerHTML = '';
-    roles.forEach(role => {
+    rolesData.forEach(record => {
+        const role = record.fields.Role;
         const option = document.createElement('option');
         option.value = role;
         option.textContent = role;
         additionalQuestion2.appendChild(option);
     });
 
-    // Add a few more roles for diversity
-    const extraRoles = ['Marketing Specialist', 'Data Analyst', 'Sales Executive'];
-    extraRoles.forEach(role => {
-        const option = document.createElement('option');
-        option.value = role;
-        option.textContent = role;
-        additionalQuestion2.appendChild(option);
+    // Initialize Select2 for the multiple select dropdown
+    $('#additionalQuestion2').select2({
+        placeholder: "Select roles",
+        allowClear: true,
+        dropdownParent: $('#modal')
     });
 }
 
@@ -250,8 +262,6 @@ function calculateCostSavings(companySize, tier) {
     }
 }
 
-fetchAirtableData();
-
 function openModal() {
     document.getElementById('modal').style.display = 'block';
 }
@@ -269,7 +279,7 @@ async function handleSecondQuizSubmit(event) {
     const additionalData = {
         'form-name': 'second-quiz-form',
         additionalQuestion1: formData.get('additionalQuestion1'),
-        additionalQuestion2: formData.get('additionalQuestion2'),
+        additionalQuestion2: Array.from(formData.getAll('additionalQuestion2')).join(', '),
         industry: formData.get('industry'),
         businessType: formData.get('businessType'),
         painPoint: formData.get('painPoint'),

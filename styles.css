@@ -454,6 +454,15 @@ body, html {
   color: #666;
 }
 
+#quizform {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
   .lp-header-content {
