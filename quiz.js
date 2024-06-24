@@ -90,9 +90,9 @@ async function handleSubmit(event) {
         businessType: formData.get('businessType'),
         painPoint: formData.get('painPoint'),
         companySize: formData.get('companySize'),
+        name: fullName,
         firstName,
         lastName,
-        name: formData.get ('name'),
         email: formData.get('email'),
         phone: formData.get('phone'),
         companyName: formData.get('companyName'),
@@ -175,7 +175,7 @@ function showReport(firstName, benefits) {
     document.getElementById('businessType-hidden').value = businessType;
     document.getElementById('painPoint-hidden').value = painPoint;
     document.getElementById('companySize-hidden').value = companySize;
-    document.getElementById('name-hidden').value = formData.get('name');
+    document.getElementById('name-hidden').value = fullName;
     document.getElementById('email-hidden').value = formData.get('email');
     document.getElementById('phone-hidden').value = formData.get('phone');
     document.getElementById('companyName-hidden').value = formData.get('companyName');
