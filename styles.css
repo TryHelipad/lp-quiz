@@ -428,6 +428,12 @@ body, html {
     right: 0;
 }
 
+.benefit-image-bottom-left {
+  position: absolute;
+  bottom: -130px;
+  left: -50px;
+}
+
 .quiz-container {
   border-radius: 25px;
   width: auto;
