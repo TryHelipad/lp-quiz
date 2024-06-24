@@ -431,7 +431,7 @@ body, html {
 
 .feature-item {
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 30px;
   padding: 1rem;
   margin: 0.5rem;
   width: 300px;
@@ -475,8 +475,8 @@ body, html {
   }
 
   .benefit-content {
-    padding: 70px 20px;
-    border-radius: 25px;
+      padding: 70px 40px;
+      border-radius: 25px;
   }
   
   .benefit-image-top-right {
@@ -600,7 +600,7 @@ body, html {
 }
 
 .scrolling-logos img {
-  height: 50px;
+  height: 30px;
   margin: 0 20px;
 }
 
