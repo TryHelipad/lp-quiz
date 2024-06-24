@@ -85,6 +85,7 @@ async function handleSubmit(event) {
     const benefits = getBenefits(industry, businessType);
 
     const data = {
+        'form-name': 'helipad-quiz-form',
         industry: formData.get('industry'),
         businessType: formData.get('businessType'),
         painPoint: formData.get('painPoint'),
@@ -103,8 +104,11 @@ async function handleSubmit(event) {
     showReport(firstName, benefits);
 
     // Submit the form data to Netlify
+    const encodedData = new URLSearchParams(data).toString();
     try {
-        await axios.post(form.action, data);
+        await axios.post('/', encodedData, {
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
         console.log('Form submitted to Netlify');
     } catch (error) {
         console.error('Error submitting form to Netlify: ', error);
@@ -164,6 +168,16 @@ function showReport(firstName, benefits) {
     document.getElementById('report-businessType-benefits').textContent = benefits.businessTypeBenefits;
 
     populateSecondQuizDropdowns(roles);
+
+    // Populate hidden fields in the second form
+    document.getElementById('industry-hidden').value = industry;
+    document.getElementById('businessType-hidden').value = businessType;
+    document.getElementById('painPoint-hidden').value = painPoint;
+    document.getElementById('companySize-hidden').value = companySize;
+    document.getElementById('name-hidden').value = formData.get('name');
+    document.getElementById('email-hidden').value = formData.get('email');
+    document.getElementById('phone-hidden').value = formData.get('phone');
+    document.getElementById('companyName-hidden').value = formData.get('companyName');
 
     document.getElementById('customQuizForm').style.display = 'none';
     document.getElementById('report').classList.add('active');
@@ -252,18 +266,32 @@ async function handleSecondQuizSubmit(event) {
     const formData = new FormData(form);
 
     const additionalData = {
+        'form-name': 'second-quiz-form',
         additionalQuestion1: formData.get('additionalQuestion1'),
-        additionalQuestion2: formData.get('additionalQuestion2')
+        additionalQuestion2: formData.get('additionalQuestion2'),
+        industry: formData.get('industry'),
+        businessType: formData.get('businessType'),
+        painPoint: formData.get('painPoint'),
+        companySize: formData.get('companySize'),
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        companyName: formData.get('companyName')
     };
 
-    // Here you can handle the additional quiz data (e.g., send to server, display report, etc.)
-    console.log('Second quiz data:', additionalData);
-
-    // Close the modal after submission
-    closeModal();
+    const encodedData = new URLSearchParams(additionalData).toString();
+    try {
+        await axios.post('/', encodedData, {
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+        console.log('Second form submitted to Netlify');
+    } catch (error) {
+        console.error('Error submitting second form to Netlify: ', error);
+    }
 
     // Optionally, you can show a thank you message or process the data further
     alert('Thank you for completing the second quiz!');
+    closeModal();
 }
 
 // Attach event listener to handle modal close on click outside of the modal content
