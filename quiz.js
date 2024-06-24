@@ -92,6 +92,7 @@ async function handleSubmit(event) {
         companySize: formData.get('companySize'),
         firstName,
         lastName,
+        name: formData.get ('name'),
         email: formData.get('email'),
         phone: formData.get('phone'),
         companyName: formData.get('companyName'),
