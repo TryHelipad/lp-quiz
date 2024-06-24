@@ -405,6 +405,55 @@ body, html {
   left: 0;
 }
 
+
+.convince-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 15px;
+  row-gap: 15px;
+}
+
+.feature-item {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.feature-item img {
+  max-width: 100px;
+  margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
   .lp-header-content {
