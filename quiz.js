@@ -102,7 +102,7 @@ async function handleSubmit(event) {
         savingsFew: calculateCostSavings(formData.get('companySize'), 'few')
     };
 
-    showReport(firstName, benefits);
+    showReport(firstName, fullName, benefits);
 
     // Submit the form data to Netlify
     const encodedData = new URLSearchParams(data).toString();
@@ -124,7 +124,7 @@ async function handleSubmit(event) {
     }
 }
 
-function showReport(firstName, benefits) {
+function showReport(firstName, fullName, benefits) {
     const formData = new FormData(document.getElementById('customQuizForm'));
 
     const industry = formData.get('industry');
