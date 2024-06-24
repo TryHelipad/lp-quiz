@@ -120,196 +120,222 @@
         <p class="section-paragraph">At Helipad, we understand the challenges of running a business in today’s fast-paced world. Whether you're a small business owner or leading a large enterprise, finding the right support to drive growth and efficiency is crucial. That’s why we’re offering a free custom report to help you identify the best roles to outsource and maximize your savings.</p>
       </div>
       <h3 class="gradient-text">Optimize and Save Quiz</h3>
-      <div id="customQuizFormContainer">
+    <div id="customQuizFormContainer">
         <form id="customQuizForm" name="helipad-quiz-form" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
-          <input type="hidden" name="form-name" value="helipad-quiz-form">
-          <!-- Step 1: Industry -->
-          <div id="step1" class="form-step active">
-            <label for="industry">What industry is your business in?</label>
-            <div class="options-container">
-              <div class="option-block" onclick="selectIndustry('construction')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/667255661f3d768fd2be2fa4_Untitled%20design%20(3).svg" alt="Construction">
+            <input type="hidden" name="form-name" value="helipad-quiz-form">
+                
+            <!-- Step 1: Industry -->
+<div id="step1" class="form-step active">
+    <label for="industry">What industry is your business in?</label>
+        <div class="options-container">
+            <div class="option-block" onclick="selectIndustry('construction')">
+                <img src="https://raw.githubusercontent.com/TryHelipad/QuizHelipad/e9142713b151e6935af219b73d4ad16bdd53bcf4/Resources/Construction.svg" alt="Construction">
                 <span>Construction</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('technology')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/66725618b80bbf38b01aa9ce_Untitled%20design%20(4).svg" alt="Technology">
+            </div>
+        <div class="option-block" onclick="selectIndustry('technology')">
+                <img src="https://raw.githubusercontent.com/TryHelipad/QuizHelipad/e9142713b151e6935af219b73d4ad16bdd53bcf4/Resources/Technology.svg" alt="Technology">
                 <span>Technology</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('agency')">
-                <img src="resources/Agency-Image.svg" alt="Agency">
-                <span>Agency</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('healthcare')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/667256bc1a9c869a6ae8de1d_Untitled%20design%20(5).svg" alt="Healthcare">
-                <span>Healthcare</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('finance')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/6672571d95e2ad26d9630451_Untitled%20design%20(6).svg" alt="Finance">
-                <span>Finance</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('legal')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/6672571d95e2ad26d9630451_Untitled%20design%20(6).svg" alt="Legal">
-                <span>Legal</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('education')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/6672576ddbac3e6538709b64_Untitled%20design%20(7).svg" alt="Education">
-                <span>Education</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('retail')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/667257accf30b1c922780e43_Untitled%20design%20(8).svg" alt="Retail">
-                <span>Retail</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('hospitality')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/66725cfaad5ad5518d3067ef_Untitled%20design%20(9).svg" alt="Hospitality">
-                <span>Hospitality</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('manufacturing')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/66725d5701e648b08eb678fe_Untitled%20design%20(10).svg" alt="Manufacturing">
-                <span>Manufacturing</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('real_estate')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/66725d9fcf30b1c922805f4f_Untitled%20design%20(11).svg" alt="Real Estate">
-                <span>Real Estate</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('agriculture')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/667261a8623f161fe3049bf2_Untitled%20design%20(16).svg" alt="Agriculture">
-                <span>Agriculture</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('transportation')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/66725f1cc7a3aed476327c5f_Untitled%20design%20(13).svg" alt="Transportation">
-                <span>Transportation</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('services')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/66725f1810743628cc7b898d_Untitled%20design%20(14).svg" alt="Services">
-                <span>Services</span>
-              </div>
-              <div class="option-block" onclick="selectIndustry('other')">
-                <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/66725f495fd7293ee5d0d90c_Untitled%20design%20(15).svg" alt="Other">
-                <span>Other</span>
-              </div>
+        </div>
+        <div class="option-block" onclick="selectIndustry('agency')">
+            <img src="https://raw.githubusercontent.com/TryHelipad/QuizHelipad/586218bd0ba8f62959324ae680e28ace79263026/Resources/Agency-Image.svg" alt="Finance">
+            <span>Agency</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('healthcare')">
+            <img src="https://raw.githubusercontent.com/TryHelipad/QuizHelipad/e9142713b151e6935af219b73d4ad16bdd53bcf4/Resources/Healthcare.svg" alt="Healthcare">
+            <span>Healthcare</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('finance')">
+            <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/6672571d95e2ad26d9630451_Untitled%20design%20(6).svg" alt="Finance">
+            <span>Finance</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('legal')">
+            <img src="https://raw.githubusercontent.com/TryHelipad/QuizHelipad/e9142713b151e6935af219b73d4ad16bdd53bcf4/Resources/Legal.svg" alt="Legal">
+            <span>Legal</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('education')">
+            <img src="https://raw.githubusercontent.com/TryHelipad/QuizHelipad/e9142713b151e6935af219b73d4ad16bdd53bcf4/Resources/Education.svg" alt="Education">
+            <span>Education</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('retail')">
+            <img src="https://raw.githubusercontent.com/TryHelipad/QuizHelipad/e9142713b151e6935af219b73d4ad16bdd53bcf4/Resources/Retail.svg" alt="Retail">
+            <span>Retail</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('hospitality')">
+            <img src="https://raw.githubusercontent.com/TryHelipad/QuizHelipad/e9142713b151e6935af219b73d4ad16bdd53bcf4/Resources/Hospitality.svg" alt="Hospitality">
+            <span>Hospitality</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('manufacturing')">
+            <img src="https://raw.githubusercontent.com/TryHelipad/QuizHelipad/e9142713b151e6935af219b73d4ad16bdd53bcf4/Resources/Manufacturing.svg" alt="Manufacturing">
+            <span>Manufacturing</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('real_estate')">
+            <img src="https://raw.githubusercontent.com/TryHelipad/QuizHelipad/e9142713b151e6935af219b73d4ad16bdd53bcf4/Resources/Real%20Estate.svg" alt="Real Estate">
+            <span>Real Estate</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('agriculture')">
+            <img src="https://raw.githubusercontent.com/TryHelipad/QuizHelipad/e9142713b151e6935af219b73d4ad16bdd53bcf4/Resources/Agriculture.svg" alt="Agriculture">
+            <span>Agriculture</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('transportation')">
+            <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/66725f1cc7a3aed476327c5f_Untitled%20design%20(13).svg" alt="Transportation">
+            <span>Transportation</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('services')">
+            <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/66725f1810743628cc7b898d_Untitled%20design%20(14).svg" alt="Services">
+            <span>Services</span>
+        </div>
+        <div class="option-block" onclick="selectIndustry('other')">
+            <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/66725f495fd7293ee5d0d90c_Untitled%20design%20(15).svg" alt="Other">
+            <span>Other</span>
+        </div>
+    </div>
+    <input type="hidden" id="industry" name="industry">
+    <div class="buttons-container">
+        <button type="button" onclick="nextStep(2)">Next</button>
+    </div>
+</div>
+
+            <!-- Step 2: Business Type -->
+            <div id="step2" class="form-step">
+                <label for="businessType">Choose the business that best describes your needs</label>
+                <select id="businessType" name="businessType">
+                    <!-- Options will be populated based on selected industry -->
+                </select>
+                <div class="buttons-container">
+                    <button type="button" onclick="prevStep(1)">Previous</button>
+                    <button type="button" onclick="nextStep(3)">Next</button>
+                </div>
             </div>
-            <input type="hidden" id="industry" name="industry">
-            <div class="buttons-container">
-              <button type="button" onclick="nextStep(2)">Next</button>
+
+            <!-- Step 3: Biggest Pain Point -->
+            <div id="step3" class="form-step">
+                <label for="painPoint">What is the one thing you want to change in your business?</label>
+                <select id="painPoint" name="painPoint">
+                    <option value="more_customers">We need more customers</option>
+                    <option value="systemize_operations">We need to systemize operations</option>
+                    <option value="improve_social_media">We need to improve our social media presence</option>
+                    <option value="reduce_costs">We need to reduce our costs</option>
+                </select>
+                <div class="buttons-container">
+                    <button type="button" onclick="prevStep(2)">Previous</button>
+                    <button type="button" onclick="nextStep(4)">Next</button>
+                </div>
             </div>
-          </div>
 
-          <!-- Step 2: Business Type -->
-          <div id="step2" class="form-step">
-            <label for="businessType">Choose the business that best describes your needs</label>
-            <select id="businessType" name="businessType">
-              <!-- Options will be populated based on selected industry -->
-            </select>
-            <div class="buttons-container">
-              <button type="button" onclick="prevStep(1)">Previous</button>
-              <button type="button" onclick="nextStep(3)">Next</button>
+            <!-- Step 4: Company Size -->
+            <div id="step4" class="form-step">
+                <label for="companySize">How many people work in your company?</label>
+                <select id="companySize" name="companySize">
+                    <option value="1-5">1-5</option>
+                    <option value="5-10">5-10</option>
+                    <option value="10-20">10-20</option>
+                    <option value="20-50">20-50</option>
+                    <option value="50-100">50-100</option>
+                    <option value="100+">100+</option>
+                </select>
+                <div class="buttons-container">
+                    <button type="button" onclick="prevStep(3)">Previous</button>
+                    <button type="button" onclick="nextStep(5)">Next</button>
+                </div>
             </div>
-          </div>
 
-          <!-- Step 3: Biggest Pain Point -->
-          <div id="step3" class="form-step">
-            <label for="painPoint">What is the one thing you want to change in your business?</label>
-            <select id="painPoint" name="painPoint">
-              <option value="more_customers">We need more customers</option>
-              <option value="systemize_operations">We need to systemize operations</option>
-              <option value="improve_social_media">We need to improve our social media presence</option>
-              <option value="reduce_costs">We need to reduce our costs</option>
-            </select>
-            <div class="buttons-container">
-              <button type="button" onclick="prevStep(2)">Previous</button>
-              <button type="button" onclick="nextStep(4)">Next</button>
+            <!-- Step 5: Contact Information -->
+            <div id="step5" class="form-step">
+                <label for="name" class="left-align-label">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email" class="left-align-label">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone" class="left-align-label">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="companyName" class="left-align-label">Company Name</label>
+                <input type="text" id="companyName" name="companyName" required>
+
+                <div class="buttons-container">
+                    <button type="button" onclick="prevStep(4)">Previous</button>
+                    <button type="submit">Show My Report</button>
+                </div>
             </div>
-          </div>
-
-          <!-- Step 4: Company Size -->
-          <div id="step4" class="form-step">
-            <label for="companySize">How many people work in your company?</label>
-            <select id="companySize" name="companySize">
-              <option value="1-5">1-5</option>
-              <option value="5-10">5-10</option>
-              <option value="10-20">10-20</option>
-              <option value="20-50">20-50</option>
-              <option value="50-100">50-100</option>
-              <option value="100+">100+</option>
-            </select>
-            <div class="buttons-container">
-              <button type="button" onclick="prevStep(3)">Previous</button>
-              <button type="button" onclick="nextStep(5)">Next</button>
-            </div>
-          </div>
-
-          <!-- Step 5: Contact Information -->
-          <div id="step5" class="form-step">
-            <label for="name" class="left-align-label">Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email" class="left-align-label">Email</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phone" class="left-align-label">Phone</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="companyName" class="left-align-label">Company Name</label>
-            <input type="text" id="companyName" name="companyName" required>
-
-            <div class="buttons-container">
-              <button type="button" onclick="prevStep(4)">Previous</button>
-              <button type="submit">Show My Report</button>
-            </div>
-          </div>
 
         </form>
 
         <div class="report" id="report">
-          <h2 id="report-header"></h2>
-          <div class="report-item">
-            <p id="report-greeting"></p>
-          </div>
-          <div class="report-item">
-            <p class="report-title">Your Integration Score is:</p>
-            <p id="integration-score"></p>
-          </div>
-          <div class="report-item">
-            <p class="report-title">Roles you can Outsource</p>
-            <ul id="report-roles" class="report-roles-list"></ul>
-          </div>
-          <div class="report-item">
-            <p class="report-title">Can remote staff work for my industry?</p>
-            <p id="report-industry-benefits"></p>
-          </div>
-          <div class="report-item">
-            <p class="report-title">What about my specific business?</p>
-            <p id="report-businessType-benefits"></p>
-          </div>
-          <div class="savings">
-            <h3>How much you can expect to save</h3>
-            <div class="savings-container"> 
-              <div class="report-item">
-                <p class="savings-title">Estimated Annual Savings (Full Remote Team)</p>
-                <p id="report-costSavings-full"></p>
-              </div>
-              <div class="report-item">
-                <p class="savings-title">Estimated Annual Savings (Half Remote Team)</p>
-                <p id="report-costSavings-half"></p>
-              </div>
-              <div class="report-item">
-                <p class="savings-title">Estimated Annual Savings (1-2 Remote Staff)</p>
-                <p id="report-costSavings-few"></p>
-              </div>
-            </div>   
-          </div>
-          <div class="report-item-ebook">
-            <p class="report-title-ebook">You have unlocked a free customized report</p>
-            <p id="report-free-ebook">Based on the high integration score that you have received, you have unlocked a free custom report. By answering a few more questions you can unlock a step by step guide to hiring, implementing and retaining remote staff. We will take into account your unique business needs and ensure you don't make the same mistakes that most other businesses make.
-            </p>
-            <div class="buttons-container-ebook">
-              <button>Give me my free report</button>
+            <h2 id="report-header"></h2>
+            <div class="report-item">
+                <p id="report-greeting"></p>
             </div>
-          </div>
+            <div class="report-item">
+                <p class="report-title">Your Integration Score is:</p>
+                <p id="integration-score"></p>
+            </div>
+            <div class="report-item">
+                <p class="report-title">Roles you can Outsource</p>
+                <ul id="report-roles" class="report-roles-list"></ul>
+            </div>
+            <div class="report-item">
+                <p class="report-title">Can remote staff work for my industry?</p>
+                <p id="report-industry-benefits"></p>
+            </div>
+            <div class="report-item">
+                <p class="report-title">What about my specific business?</p>
+                <p id="report-businessType-benefits"></p>
+            </div>
+            <div class="savings">
+                <h3>How much you can expect to save</h3>
+                <div class="savings-container"> 
+                    <div class="report-item">
+                        <p class="savings-title">Estimated Annual Savings (Full Remote Team)</p>
+                        <p id="report-costSavings-full"></p>
+                    </div>
+                    <div class="report-item">
+                        <p class="savings-title">Estimated Annual Savings (Half Remote Team)</p>
+                        <p id="report-costSavings-half"></p>
+                    </div>
+                    <div class="report-item">
+                        <p class="savings-title">Estimated Annual Savings (1-2 Remote Staff)</p>
+                        <p id="report-costSavings-few"></p>
+                    </div>
+                </div>   
+            </div>
+            <div class="report-item-ebook">
+                <p class="report-title-ebook">You have unlocked a free customized report</p>
+                <p id="report-free-ebook">Based on the high integration score that you have received, you have unlocked a free custom report. By answering a few more questions you can unlock a step-by-step guide to hiring, implementing, and retaining remote staff. We will take into account your unique business needs and ensure you don't make the same mistakes that most other businesses make.</p>
+                <div class="buttons-container-ebook">
+                    <button onclick="openModal()">Give me my free report</button>
+                </div>
+            </div>
         </div>
-      </div>
+    
+          <!-- Modal for second quiz -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <h2 class="modal-heading">Download Our Free Ebook "The Ultimate Guide For Hiring and Managing Remote Employees"</h2>
+                <div class="modal-body">
+                    <img src="https://uploads-ssl.webflow.com/666649c3136bb0669471bce8/6677a01e4ebc55082ebe6bd7_Untitled%20design%20(15).png" alt="Descriptive Alt Text" class="modal-image">
+                    <div class="modal-text">
+                        <p>Congratulations on unlocking our Free Ebook. This book is packed with 100+ pages of valuable insights on how to identify roles within your business that can be outsourced, how to find the best remote staff, how to hire, train and manage them, how to handle overseas payments and more. Download this today to get started on your journey to become more profitable and saving more time.</p>
+                        <form id="secondQuizForm" onsubmit="handleSecondQuizSubmit(event)">
+                            <label for="additionalQuestion1">How many remote employees are you looking to hire for your business?</label>
+                            <select id="additionalQuestion1" name="additionalQuestion1" required>
+                                <!-- Options will be populated dynamically -->
+                            </select>
+
+                            <label for="additionalQuestion2">For which roles are you looking to hire remote employees?</label>
+                            <select id="additionalQuestion2" name="additionalQuestion2" required>
+                                <!-- Options will be populated dynamically -->
+                            </select>
+                            <div class="buttons-container">
+                                <button type="submit">Get Free Report</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
   <div class="spacer"></div>
   <div class="section benefit-section">
     <div class="benefit-wrapper">

@@ -532,6 +532,16 @@ body, html {
   .testimonial-item {
     width: 100%;
   }
+
+  .features {
+    flex-direction: column;
+}
+
+.feature-item {
+    width: 90%;
+    margin: 0.5rem auto;
+}
+
 }
 
 @media (max-width: 576px) {

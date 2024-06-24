@@ -163,8 +163,40 @@ function showReport(firstName, benefits) {
     document.getElementById('report-industry-benefits').textContent = benefits.industryBenefits;
     document.getElementById('report-businessType-benefits').textContent = benefits.businessTypeBenefits;
 
+    populateSecondQuizDropdowns(roles);
+
     document.getElementById('customQuizForm').style.display = 'none';
     document.getElementById('report').classList.add('active');
+}
+
+function populateSecondQuizDropdowns(roles) {
+    const additionalQuestion1 = document.getElementById('additionalQuestion1');
+    const additionalQuestion2 = document.getElementById('additionalQuestion2');
+
+    additionalQuestion1.innerHTML = '';
+    for (let i = 1; i <= 10; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = i;
+        additionalQuestion1.appendChild(option);
+    }
+
+    additionalQuestion2.innerHTML = '';
+    roles.forEach(role => {
+        const option = document.createElement('option');
+        option.value = role;
+        option.textContent = role;
+        additionalQuestion2.appendChild(option);
+    });
+
+    // Add a few more roles for diversity
+    const extraRoles = ['Marketing Specialist', 'Data Analyst', 'Sales Executive'];
+    extraRoles.forEach(role => {
+        const option = document.createElement('option');
+        option.value = role;
+        option.textContent = role;
+        additionalQuestion2.appendChild(option);
+    });
 }
 
 function calculateCostSavings(companySize, tier) {
@@ -204,3 +236,40 @@ function calculateCostSavings(companySize, tier) {
 }
 
 fetchAirtableData();
+
+function openModal() {
+    document.getElementById('modal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+async function handleSecondQuizSubmit(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+
+    const form = document.getElementById('secondQuizForm');
+    const formData = new FormData(form);
+
+    const additionalData = {
+        additionalQuestion1: formData.get('additionalQuestion1'),
+        additionalQuestion2: formData.get('additionalQuestion2')
+    };
+
+    // Here you can handle the additional quiz data (e.g., send to server, display report, etc.)
+    console.log('Second quiz data:', additionalData);
+
+    // Close the modal after submission
+    closeModal();
+
+    // Optionally, you can show a thank you message or process the data further
+    alert('Thank you for completing the second quiz!');
+}
+
+// Attach event listener to handle modal close on click outside of the modal content
+window.onclick = function(event) {
+    const modal = document.getElementById('modal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
