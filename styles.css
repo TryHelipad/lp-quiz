@@ -46,6 +46,7 @@ body, html {
   position: relative;
   background-image: url('resources/remarkable_beetle_75559_a_blueish_purpleish_greenish_gradient_b_59d3651a-edfc-4ff6-890a-23d0cba4b444.png');
   background-size: cover;
+  background-position: right;
 }
 
 .spline-wrapper {
@@ -143,6 +144,13 @@ body, html {
   background-image: linear-gradient(135deg, #97bdf5, #99c2ff 0%, #a803f5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.section-subheader-header-white {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .section-heading {
@@ -484,7 +492,7 @@ body, html {
   .subheading {
     font-size: 16px;
   }
-  .benefit-title, .section-subheader, .section-heading {
+  .benefit-title, .section-heading {
     font-size: 24px;
   }
   .section-paragraph, .benefit-description, .benefit-text, .testimonial-text, .quiz-description {
@@ -493,6 +501,29 @@ body, html {
   .quiz-button {
     padding: 10px 20px;
   }
+  .lp-header {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-image: url(resources/remarkable_beetle_75559_a_blueish_purpleish_greenish_gradient_b_59d3651a-edfc-4ff6-890a-23d0cba4b444.png);
+    background-size: cover;
+    background-position: -466px 0px;
+}
+.section-subheader {
+  font-size: 16px;
+}
+
+.quiz-image {
+  width: 116px;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 }
 
 .scrolling-logos {
