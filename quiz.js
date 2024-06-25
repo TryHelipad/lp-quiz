@@ -222,7 +222,7 @@ function populateSecondQuizDropdowns() {
     $('#additionalQuestion2').select2({
         placeholder: "Select roles",
         allowClear: true,
-        dropdownParent: $('#modal'),
+        dropdownParent: $('#modal .modal-content'),
         width: '100%', // Ensure full width for mobile devices
     });
 }

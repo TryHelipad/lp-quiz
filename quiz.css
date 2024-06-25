@@ -459,7 +459,8 @@ select {
     }
 
     .modal-image {
-        max-width: 70%;
+        max-width: 60%;
+        height: auto;
         margin-bottom: 10px;
         justify-content: center;
     }
