@@ -326,6 +326,8 @@ select {
 .modal-image {
     flex: 1;
     max-width: 40%;
+    height: auto; /* Ensure the image maintains its aspect ratio */
+    object-fit: contain; /* Ensures the image is contained within its bounds without stretching */
 }
 
 .modal-text {
@@ -390,6 +392,7 @@ select {
         max-width: 60%;
         margin-bottom: 20px;
         margin-right: 0;
+        height: auto; /* Maintain aspect ratio */
     }
 
     .modal-text {
@@ -460,7 +463,7 @@ select {
 
     .modal-image {
         max-width: 60%;
-        height: auto;
+        height: auto; /* Maintain aspect ratio */
         margin-bottom: 10px;
         justify-content: center;
     }
