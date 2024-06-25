@@ -150,7 +150,8 @@ body, html {
   color: white;
   font-size: 18px;
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
 }
 
 .section-heading {
@@ -193,7 +194,10 @@ body, html {
 
 .benefit-header {
   margin-bottom: 20px;
-  width: 40%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
 }
 
 .benefit-title {
