@@ -463,6 +463,19 @@ body, html {
   padding: 60px 20px;
 }
 
+/* Add custom styles for Select2 to ensure mobile compatibility */
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-dropdown {
+  width: auto !important; /* Ensure the dropdown width is properly set */
+}
+
+.select2-results__options {
+  max-height: 200px !important; /* Ensure the dropdown does not overflow */
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
   .lp-header-content {
@@ -550,7 +563,12 @@ body, html {
     width: 90%;
     margin: 0.5rem auto;
 }
-
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  font-size: 14px; /* Adjust font size for better readability on mobile */
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  font-size: 14px; /* Adjust font size for better readability on mobile */
+}
 }
 
 @media (max-width: 576px) {
