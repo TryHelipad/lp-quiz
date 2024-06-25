@@ -463,7 +463,7 @@ select {
 
     .modal-image {
         max-width: 60%;
-        height: 30%; /* Maintain aspect ratio */
+        height: auto; /* Maintain aspect ratio */
         margin-bottom: 10px;
         justify-content: center;
     }
